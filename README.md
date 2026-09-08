@@ -1,19 +1,21 @@
 # java-spring-playground
 
-A personal collection of runnable examples and best practices for **Java 25+** and **Spring Boot 4**.
+A personal collection of runnable examples and best practices for **Java** and **Spring Boot 4**.
 
 Each example is small, self-contained, and focused on a single concept. The goal is a reference I can come back to, and a way to consolidate what I learn by writing it down clearly.
 
 ## Requirements
 
-- **JDK 25** (LTS, released September 2025), check with `java -version`
+- **JDK 21** and **JDK 25** (LTS, released September 2025), check with `java -version`
 - **Maven**
-- Any IDE with Java 25 support (IntelliJ IDEA, VS Code, Eclipse)
+- Any IDE with Java 21 and Java 25 support (IntelliJ IDEA, VS Code, Eclipse)
 
 ## Structure
 
 ```
 java-spring-playground/
+├── java16/          # Language & JDK features (see java16/README.md)
+├── java21/          # Language & JDK features (see java21/README.md)
 ├── java25/          # Language & JDK features (see java25/README.md)
 └── spring-boot/     # Spring Boot 4 best practices (see spring-boot/README.md)
 ```
