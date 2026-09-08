@@ -4,12 +4,15 @@ import java.util.Objects;
 
 class Main {
     public static void main(String[] args) {
+        // Default approach with class
         var personClass = new PersonClass("John", "Doe");
         System.out.println(personClass.toString());
 
+        // Record generate a constructor, only constrains the shape
         var person = new Person("Harry", null);
         System.out.println(person.toString());
 
+        // Record generate an equals method
         System.out.println("record equals, generated: " +
             new Person("Tom", "Jedusor")
             .equals(new Person("Tom", "Jedusor")));
@@ -17,14 +20,17 @@ class Main {
             new PersonClass("Tom", "Jedusor")
             .equals(new PersonClass("Tom", "Jedusor")));
 
+        // Can add constraints
         try {
             new NonNullPerson("Harry", null);
         } catch (NullPointerException e) {
             System.out.println(e);
         }
         var nonNullPerson = new NonNullPerson("Harry", "Potter");
-        System.out.printf("Person: %s %s %n", nonNullPerson.firstName(), nonNullPerson.lastName()); // Example with generated accessors
+        // Example with record generated accessors
+        System.out.printf("Person: %s %s %n", nonNullPerson.firstName(), nonNullPerson.lastName());
 
+        // Can supplies default value
         var missingLastNamePerson = new MissingLastNamePerson("Tom");
         System.out.println(missingLastNamePerson.toString());
 
@@ -120,4 +126,3 @@ class PersonClass {
         return Objects.hash(firstName, lastName);
     }
 }
-
